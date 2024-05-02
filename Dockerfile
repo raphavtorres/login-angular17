@@ -1,11 +1,14 @@
-FROM node:21
+FROM node:alpine
 
 WORKDIR /front-end
 
-COPY . .
+RUN npm install -g @angular/cli@17 
 
-RUN npm install
-RUN npm install @angular/cli@17 -g
+COPY package.json .
+
+RUN npm install 
+
+COPY . .
 
 EXPOSE 4200
 

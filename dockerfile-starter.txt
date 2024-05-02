@@ -1,6 +1,6 @@
 FROM node:21
 
-WORKDIR /front-end
+WORKDIR /login-angular17
 
 RUN npm install @angular/cli@17 -g
 

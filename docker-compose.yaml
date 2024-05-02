@@ -1,12 +1,11 @@
-version: '3.9'
+version: '3.3'
 
 services:
   angular-app:
-    build: .
+    build: 
+      context: .
     container_name: angular-app
     ports:
       - 4200:4200
     volumes:
-      - ./:/front-end
-    environment:
-      - STYLE=scss
+      - .:/front-end
