@@ -1,11 +1,11 @@
 version: '3.3'
 
 services:
-  angular-app:
-    build: 
-      context: .
-    container_name: angular-app
+  container-angular:
+    build: .
+      # context: .
+    container_name: container-angular
     ports:
       - 4200:4200
     volumes:
-      - .:/front-end
+      - ./:/login-angular17

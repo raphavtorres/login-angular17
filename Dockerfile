@@ -1,15 +1,16 @@
-FROM node:alpine
+FROM node:lts
 
-WORKDIR /front-end
+WORKDIR /login-angular17
 
-RUN npm install -g @angular/cli@17 
+RUN npm install -g @angular/cli 
 
-COPY package.json .
+COPY package.json /login-angular17/
 
-RUN npm install 
+COPY . /login-angular17
 
-COPY . .
-
-EXPOSE 4200
+RUN npm install
+RUN ls && sleep 15
 
 CMD ["ng", "serve", "--host", "0.0.0.0"]
+
+EXPOSE 4200
