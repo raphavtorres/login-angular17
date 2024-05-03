@@ -15,6 +15,5 @@ RUN npm install --save-dev @angular-devkit/build-angular
 RUN ng update @angular/cli @angular/core --allow-dirty --force
 
 CMD ["ng", "serve", "--host", "0.0.0.0"]
-# CMD ["npm start"]
 
 EXPOSE 4200
