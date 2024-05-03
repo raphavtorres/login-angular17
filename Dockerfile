@@ -2,15 +2,19 @@ FROM node:lts
 
 WORKDIR /login-angular17
 
-RUN npm install -g @angular/cli 
-
-COPY package.json /login-angular17/
-
 COPY . /login-angular17
 
+RUN npm install -g @angular/cli 
+
 RUN npm install
-RUN ls && sleep 15
+
+RUN npm uninstall @angular-devkit/build-angular
+
+RUN npm install --save-dev @angular-devkit/build-angular
+
+RUN ng update @angular/cli @angular/core --allow-dirty --force
 
 CMD ["ng", "serve", "--host", "0.0.0.0"]
+# CMD ["npm start"]
 
 EXPOSE 4200
