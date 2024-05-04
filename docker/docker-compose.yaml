@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  container-angular:
+    build: 
+      context: ../
+    container_name: container-angular
+    ports:
+      - 4200:4200
+    volumes:
+      - ../:/app
+      - /app/node_modules
+
+volumes:
+  node_modules:
