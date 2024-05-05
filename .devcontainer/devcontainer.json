@@ -3,24 +3,25 @@
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// ---- IMAGE ------
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	// ---- DOCKER COMPOSE AND DOCKERFILE ------
+	// "dockerComposeFile": "docker-compose.yml",
+	// "service": "container-angular",
+	// "workspaceFolder": "/home/node/app",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
 		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
-	}
-
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
+	"forwardPorts": [
+		"4200:4200"
+	],
+	"postCreateCommand": "sudo npm install -g @angular/cli && npm i"
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	// "remoteUser": "app"
 }

@@ -25,3 +25,9 @@ $ docker exec -it angular-app ng generate component <component_name>
 ```bash
 $ docker exec -it angular-app ng ...
 ```
+
+
+### Run Project with dev container
+```bash
+$ ng serve --host 0.0.0.0 --poll 500
+```
